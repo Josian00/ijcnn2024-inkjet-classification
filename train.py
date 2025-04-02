@@ -18,7 +18,7 @@ from src.utils import get_module, init_module
 FLAGS = flags.FLAGS
 
 config_flags.DEFINE_config_file(
-    "config", None, "Config file.")
+    "config", "src/configs/mlp_base.py", "Config file.")
 flags.DEFINE_integer('random_seed', 41, "Random Seed")
 
 flags.mark_flags_as_required(["config"])
@@ -83,7 +83,7 @@ def train_nn(config, config_path, log_dir  ):
 
     trainer = pl.Trainer(
         callbacks=callbacks, accelerator="cpu",
-        devices=None,
+        devices="auto",
         enable_progress_bar=True,
         max_epochs=99999, num_nodes=1)
 

@@ -72,7 +72,7 @@ class ICTDataModule(pl.LightningDataModule):
         super().__init__()
 
         self.data_file = data_file
-        self.img_base_folder = './images/output'
+        self.img_base_folder = './output'
         self.batch_size = batch_size
         self.random_seed = random_seed
         self.take_crop = take_crop

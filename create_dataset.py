@@ -280,7 +280,7 @@ def run():
 
     train_df, descriptors = get_features(
         df=train_df, printer_models=printer_models,
-        img_data_prefix='./images/output', num_segments=args.num_crops_per_image,
+        img_data_prefix='./output', num_segments=args.num_crops_per_image,
         crop_size=args.crop_size, random_state=random_state,
         feature_fn=process_segment, save_crops=True, masked_region=blackout_mask)
 
@@ -288,7 +288,7 @@ def run():
 
     val_df, _ = get_features(
                 df=val_df, printer_models=printer_models,
-                img_data_prefix='./images/output', num_segments=args.num_crops_per_image,
+                img_data_prefix='./output', num_segments=args.num_crops_per_image,
                 crop_size=args.crop_size, random_state=random_state,
                 feature_fn=process_segment, save_crops=True, masked_region=blackout_mask)
 
